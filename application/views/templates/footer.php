@@ -1,3 +1,4 @@
-<strong>&copy; 2015</strong>
+
+<h1>FOOTER</h1>
 </body>
 </html>

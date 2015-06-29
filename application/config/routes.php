@@ -45,6 +45,8 @@ $route['news/create'] = 'news/create';
 $route['admtool/(:any)'] = 'admintool/view/$1';
 $route['admtool/create'] = 'admintool/create';
 $route['admtool/login'] = 'admintool/login/index';
+$route['admtool/userA'] = 'admintool/userM/userA';
+$route['admtool/userC'] = 'admintool/userM/userC';
 $route['news'] = 'news';
 $route['404_override'] = '';
 

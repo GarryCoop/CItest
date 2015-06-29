@@ -10,7 +10,7 @@ class Login extends CI_Controller {
 
 	public function index()
         {
-            log_message('debug','TRACE :: login.php :: index');
+            log_message('info','TRACE :: login.php :: index');
                 $this->load->helper('form');
                 $this->load->library('form_validation');
 
@@ -21,7 +21,7 @@ class Login extends CI_Controller {
 
                 if ($this->form_validation->run() === FALSE)
                 {
-                    log_message('debug','TRACE :: login.php :: index :: FALSE');
+                    log_message('info','TRACE :: login.php :: index :: FALSE');
                         $this->load->view('templates/header', $data);
                         $this->load->view('admintool/index');
                         $this->load->view('templates/footer');
@@ -29,7 +29,7 @@ class Login extends CI_Controller {
                 }
                 else
                 {
-                    log_message('debug','TRACE :: login.php :: index :: TRUE');
+                    log_message('info','TRACE :: login.php :: index :: TRUE');
                         $result = $this->login_model->check_login($this->input->post('name'));
                         if($result == null){
                             log_message('error','No data found for this name:'.$this->input->post('name'));
