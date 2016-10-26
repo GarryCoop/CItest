@@ -286,7 +286,7 @@ AUI().add(
 								A.each(
 									instance.TREEVIEWS,
 									function(item, index, collection) {
-										//item.expandAll();
+//										item.expandAll();
 									}
 								);
 							}
