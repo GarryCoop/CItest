@@ -1,0 +1,20 @@
+1. Login as admin and go to global site liferay.com
+2. Go to Control Panel > Documents
+3. Click Add Document,then click classic uploader, add title (use unique title to ease remember, ex:Dictionary CSV) for file and remember it, then save document as usual.
+	*Example csv file included in same directory as this note.
+4. Get uploaded document id by query to database with title you remembered before:
+	select fileEntryId from dlfileentry where title="Dictionary CSV";
+5. After get fileEntryId, go to tomcat directory at \tomcat-6.0.29\webapps\ROOT\WEB-INF\classes
+6. Shutdown tomcat, open portal-ext.properties then add new properties as below (1207 is fileEntryId) and save:
+	asset.categories.search.hierarchical=false
+	advance.search.dict.file.entry.id=1207
+7. Run tomcat again, then deploy liferay-search-hook-hook project.
+
+
+
+If you want to update csv, then updated csv must be upload to that document library (in ex:Dictionary CSV) by:
+1. Go to documents and edit document (Dictionary CSV), click Choose File and select your updated file.
+2. Click save.
+
+\lib\ext in tomcat
+univocity-parsers-2.2.2.jar
